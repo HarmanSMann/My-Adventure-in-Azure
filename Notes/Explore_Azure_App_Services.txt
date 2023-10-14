@@ -9,7 +9,7 @@ Unit 1 - The Basics
       - Connect using any of the above and App services will do the rest to auto-sync and deploy any changes
 
 	- Deployment slots
-			- Deployment slots are different from the default production slots - they are live apps with their host names
+	- Deployment slots are different from the default production slots - they are live apps with their host names
 		  - This goes alongside the production slot where people work on features, bugs and improvements to the application.
 
 	- App Services on Linux
