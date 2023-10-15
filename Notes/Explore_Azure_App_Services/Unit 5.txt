@@ -1,0 +1,65 @@
+Unit 5 - Azure App Service Networking Features
+	Default Behavior
+		- Accessibility: By default, apps in App Service are accessible directly over the internet and can reach internet-hosted endpoints.
+
+		Deployment Types
+		1. Multitenant Public Service:
+			- Hosts App Service plans in Free, Shared, Basic, Standard, Premium, PremiumV2, and PremiumV3 pricing SKUs.
+
+		2. Single-Tenant App Service Environment (ASE):
+			- Hosts Isolated SKU App Service plans directly in your Azure virtual network.
+
+	Multitenant App Service Networking Features
+		- Roles:
+			- Front Ends: Handle incoming HTTP or HTTPS requests.
+			- Workers: Host the customer workload.
+
+		- Network Structure:
+			- Multitenant network; can't directly connect to your network.
+
+		- Inbound Features:
+			- App-assigned address
+			- Access restrictions
+			- Service endpoints
+			- Private endpoints
+
+		- Outbound Features:
+			- Hybrid Connections
+			- Gateway-required virtual network integration
+			- Virtual network integration
+
+	Inbound Use Cases
+		- Examples of Inbound Use Cases:
+			- Support IP-based SSL needs for your app
+			- Support unshared dedicated inbound address for your app
+			- Restrict access to your app from a set of well-defined addresses
+
+		- Corresponding Features:
+			- App-assigned address
+			- Access restrictions
+
+	Default Networking Behavior
+		- Scale Units:
+			- Support many customers in each deployment.
+			- Free and Shared SKU plans use multitenant workers.
+			- Basic and higher plans use dedicated workers for one App Service plan.
+
+		- Outbound Addresses:
+			- Different VM types for different plans.
+			- Change in VM family results in different outbound addresses.
+
+		- Worker VMs:
+			- Broken down by App Service plans.	
+
+	Finding Outbound IPs
+		- Properties in Azure Portal:
+			- Outbound IP addresses used by your app are listed in the app's properties.
+
+		- Azure CLI Commands:
+			- To find outbound IP addresses:
+			bash 
+			az webapp show --resource-group <group_name> --name <app_name> --query outboundIpAddresses --output tsv
+
+			- To find all possible outbound IP addresses:
+			bash
+			az webapp show --resource-group <group_name> --name <app_name> --query possibleOutboundIpAddresses --output tsv
