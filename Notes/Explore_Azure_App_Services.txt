@@ -17,3 +17,49 @@ Unit 1 - The Basics
 			- This is done by running it in a custom Linux container (also known as a Web App Container)
 		- Supported languages and frameworks include Node.js, Java (JRE 8 & JRE 11), PHP, Python, .NET, and Ruby.
 			- The language versions are updated alongside your repositories whenever you need it
+
+Unit 2 - Key Components
+	1 - Attributes Defined by the Plan
+		- Operating System: (e.g., Windows, Linux)
+	   	- Region: (e.g., West US, East US)
+	   	- Number of VM Instances
+	   	- Size of VM Instances: (e.g., Small, Medium, Large)
+   		- Pricing Tier: (Free, Shared, Basic, Standard, Premium, PremiumV2, PremiumV3, Isolated, IsolatedV2)
+	
+	2 - Pricing Tier
+	   	- Shared Compute: Free and Shared tiers; share resources on the same Azure VM.
+	   	- Dedicated Compute: Basic, Standard, Premium, PremiumV2, and PremiumV3; run apps on dedicated Azure VMs.
+		- Isolated: Isolated and IsolatedV2; run dedicated Azure VMs on Azure Virtual Networks.
+		- Note: Shared tiers are for development and testing purposes.
+	
+	3 - App Running and Scaling
+		- Free and Shared Tiers:
+	  	- Run on shared VM instances with CPU quotas.
+	  	- Can't scale out.
+	
+	4 - Other Tiers:
+	  	- Apps run on all VM instances configured in the App Service plan.
+	  	- Multiple apps in the same plan share the same VM instances.
+	  	- Deployment slots and additional features (logs, backups, WebJobs) also use CPU and memory on these VM instances.
+	
+	5 - App Service Plan as the Scale Unit:
+	  	- If configured for five VM instances, all apps in the plan run on all five instances.
+	  	- Autoscaling settings apply to all apps in the plan.
+	
+	6 - Scaling and Capabilities
+		- Scaling Up and Down:
+		- Change the pricing tier of the App Service plan.
+	  	- Apps in the same plan can share resources, but consider capacity and expected load.
+	
+	7 - Isolate the App into a New Plan When:
+	  	- The app is resource-intensive.
+	  	- Independent scaling from other apps is required.
+	  	- The app needs resources in a different geographical region.
+	
+	8 - Benefits:
+	  	- Allocate a new set of resources.
+  		- Gain greater control over the app's performance.
+		
+Unit 3 - 
+Unit 4 - 
+Unit 5 - 
