@@ -1,0 +1,37 @@
+Creating an Instance
+1 - Create a Directory: mkdir htmlapp
+2 - Move to that Directory: cd htmlapp
+3 - Clone Git repo: 
+  git clone https://github.com/Azure-Samples/html-docs-hello-world.git
+4 Set a Custom Name with azure and assign a resource Group:
+  resourceGroup=$(az group list --query "[].{id:name}" -o tsv) appName=az204app$RANDOM
+
+"This command creates two variables in the Azure CLI. The first variable `resourceGroup` is assigned the output of the command `az group list --query "[].{id:name}" -o tsv`. This command lists all the resource groups in your subscription and returns their names. The `--query` parameter specifies that we want to extract only the `id` field from each resource group and return it as a tab-separated value. The `-o tsv` parameter specifies that we want to output the result as a tab-separated value.
+The second variable `appName` is assigned a string value of `az204app$RANDOM`. Here, `$RANDOM` is a shell variable that generates a random integer between 0 and 32767. The resulting string will be in the format `az204app<random_number>`. This command can be used to create a unique name for an Azure resource, such as an app service or storage account.
+"
+
+5 - Move to repo folder: cd html-docs-hello-world
+6 - Generate a live deployment: az webapp up -g $resourceGroup -n $appName --html
+
+"
+This command deploys a web app to Azure. The -g parameter specifies the name of the resource group that contains the web app. The $resourceGroup variable is used to reference the resource group name that was previously assigned. The -n parameter specifies the name of the web app. The $appName variable is used to reference the web app name that was previously assigned. The --html parameter specifies that the web app should be deployed with HTML support.
+
+Please note that this command assumes that you have already created a web app and a resource group in your Azure subscription. If you haven’t done so already, you will need to create these resources before running this command.
+"
+Result back:
+
+{
+"app_url": "https://<myAppName>.azurewebsites.net",
+"location": "westeurope",
+"name": "<app_name>",
+"os": "Windows",
+"resourcegroup": "<resource_group_name>",
+"serverfarm": "appsvc_asp_Windows_westeurope",
+"sku": "FREE",
+"src_path": "/home/<username>/demoHTML/html-docs-hello-world ",
+< JSON data removed for brevity. >
+}
+
+How to edit code:
+code index.html
+az webapp up -g $resourceGroup -n $appName --html
