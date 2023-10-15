@@ -15,21 +15,20 @@ The second variable `appName` is assigned a string value of `az204app$RANDOM`. H
 
 "
 This command deploys a web app to Azure. The -g parameter specifies the name of the resource group that contains the web app. The $resourceGroup variable is used to reference the resource group name that was previously assigned. The -n parameter specifies the name of the web app. The $appName variable is used to reference the web app name that was previously assigned. The --html parameter specifies that the web app should be deployed with HTML support.
-
 Please note that this command assumes that you have already created a web app and a resource group in your Azure subscription. If you haven’t done so already, you will need to create these resources before running this command.
 "
 Result back:
 
 {
-"app_url": "https://<myAppName>.azurewebsites.net",
-"location": "westeurope",
-"name": "<app_name>",
-"os": "Windows",
-"resourcegroup": "<resource_group_name>",
-"serverfarm": "appsvc_asp_Windows_westeurope",
-"sku": "FREE",
-"src_path": "/home/<username>/demoHTML/html-docs-hello-world ",
-< JSON data removed for brevity. >
+  "app_url": "https://<myAppName>.azurewebsites.net", --> This will be your temp webpage
+  "location": "westeurope",
+  "name": "<app_name>",
+  "os": "Windows",
+  "resourcegroup": "<resource_group_name>",
+  "serverfarm": "appsvc_asp_Windows_westeurope",
+  "sku": "FREE",
+  "src_path": "/home/<username>/demoHTML/html-docs-hello-world ",
+  < JSON data removed for brevity. >
 }
 
 How to edit code:
