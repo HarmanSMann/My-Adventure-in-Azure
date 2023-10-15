@@ -1,0 +1,59 @@
+Unit 3 - Deployment to Azure App Service Notes
+
+Automated Deployment
+
+Definition:
+	- Automated Deployment (Continuous Deployment): A repetitive process for efficiently pushing new features and bug fixes with minimal impact on end users.
+
+Options for Automated Deployment:
+	1. Azure DevOps Services:
+		- Push code to Azure DevOps Services.
+		- Build, test, generate a release, and deploy to Azure Web App.
+
+	2. GitHub:
+		- Connect GitHub repository to Azure for automated deployment.
+		- Changes pushed to the production branch on GitHub trigger automatic deployment.
+
+	3. Bitbucket:
+		- Similar to GitHub, configure automated deployment with Bitbucket.
+
+Manual Deployment
+
+Options for Manual Deployment:
+	1. Git:
+		- App Service web apps feature a Git URL for remote repository.
+		- Pushing to the remote repository deploys the app.
+
+	2. CLI (az webapp up):
+		- Feature of the az command-line interface.
+		- Packages and deploys the app; creates a new App Service web app if not already created.
+
+	3. Zip Deploy:
+		- Use curl or similar HTTP utility to send a ZIP of application files to App Service.
+
+	4. FTP/S (FTP or FTPS):
+		- Traditional method for pushing code to various hosting environments, including App Service.
+
+Use of Deployment Slots
+
+Deployment Slots:
+	- Purpose: Deploy new production builds with minimal downtime.
+	- Conditions: Available in Standard App Service Plan tier or better.
+	- Process:
+		- Deploy app to a staging environment.
+		- Swap staging and production slots.
+		- Swap operation warms up necessary worker instances to match production scale, eliminating downtime.
+
+ Considerations
+	- Unique Team Requirements:
+		- Every development team may have unique requirements for deployment pipelines.
+
+	- Efficiency:
+		- Balance between automated and manual deployment based on project needs.
+
+	- Standard App Service Plan or Better:
+		- Deployment slots are recommended for new production builds.
+
+	- az webapp up:
+		- Convenient CLI feature for creating and deploying App Service web apps.
+
