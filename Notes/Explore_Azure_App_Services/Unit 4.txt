@@ -1,0 +1,59 @@
+Unit 4 - Authentication and Authorization in Azure App Service
+
+Overview
+	- Built-in Support: Azure App Service offers built-in authentication and authorization to streamline user sign-in and data access for web apps, RESTful APIs, mobile backends, and Azure Functions.
+	- Reasons to Use Built-in Authentication:
+	- Time and Effort Saving: Minimizes the need for extensive code in your application.
+	- Out-of-the-Box Features: Supports federated identity providers for seamless integration.
+	- Flexibility: Allows integration with multiple login providers, such as Azure AD, Facebook, Google, Twitter.
+
+Identity Providers
+	- App Service uses federated identity with various providers, including:
+	- Microsoft Identity Platform
+	- Facebook
+	- Google
+	- Twitter
+	- Any OpenID Connect provider
+	- GitHub
+	- Each provider has a designated sign-in endpoint for user authentication.
+
+How It Works
+	- Authentication and Authorization Module:
+	- Operates in the same sandbox as application code.
+	- Handles user authentication, token validation, session management, and identity injection into HTTP request headers.
+	- Configurable via Azure Resource Manager settings or a configuration file.
+	- No need for SDKs, specific programming languages, or changes to application code.
+
+	- Authentication Flow:
+	- Without Provider SDK:
+	- Server-directed flow.
+	- App Service manages federated sign-in.
+	- With Provider SDK:
+	- Client-directed flow.
+	- Application code manages user sign-in using the provider's SDK.
+
+	- Steps in Authentication Flow:
+	- Sign user in.
+	- Post-authentication.
+	- Establish authenticated session.
+	- Serve authenticated content.
+
+Authorization Behavior
+	- Configurable in Azure Portal:
+	- Allow Unauthenticated Requests:
+	- Defers authorization to application code.
+	- Provides flexibility for handling anonymous requests.
+	- Require Authentication:
+	- Rejects unauthenticated traffic.
+	- Can redirect to configured identity providers.
+	- Caution: Restricting access applies to all calls, which might be undesirable for publicly available home pages in some applications.
+
+Token Store
+	- Built-in Token Store:
+		- Repository of tokens associated with users.
+		- Immediately available when authentication is enabled with any provider.
+
+Logging and Tracing
+	- Application Logging:
+	- Authentication and authorization traces collected in log files.
+	- Conveniently troubleshoot authentication errors by examining application logs.
