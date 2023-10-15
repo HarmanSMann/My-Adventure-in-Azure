@@ -1,19 +1,19 @@
 Unit 1 - The Basics
-  - Azure is a HTTP based service for hosting Web apps, Rest APIs and Mobile Backends 
-  - Features include the ability to scale the system based on the project requirements, whether they grow or shrink.
-      - Up/Down -> This is based on your system requirements, like RAM, Storage, CPU
-      - Out/In -> The ability to increase or decrease the number of machine instances running your project
+	- Azure is a HTTP based service for hosting Web apps, Rest APIs and Mobile Backends 
+  	- Features include the ability to scale the system based on the project requirements, whether they grow or shrink.
+	- Up/Down -> This is based on your system requirements, like RAM, Storage, CPU
+      	- Out/In -> The ability to increase or decrease the number of machine instances running your project
 
-  - Continuous Integration/Deployment support
-      - Out-of-the-box integration and deployment with Azure DevOps, Github, BitBucket, FTP 
-      - Connect using any of the above and App services will do the rest to auto-sync and deploy any changes
+  	- Continuous Integration/Deployment support
+      		- Out-of-the-box integration and deployment with Azure DevOps, Github, BitBucket, FTP 
+      		- Connect using any of the above and App services will do the rest to auto-sync and deploy any changes
 
 	- Deployment slots
-	- Deployment slots are different from the default production slots - they are live apps with their host names
-		  - This goes alongside the production slot where people work on features, bugs and improvements to the application.
+		- Deployment slots are different from the default production slots - they are live apps with their host names
+		- This goes alongside the production slot where people work on features, bugs and improvements to the application.
 
 	- App Services on Linux
-			- Apps can be hosted natively on Linius, but they also require that it works on Linux too 
-					- This is done by running it in a custom Linux container (also known as a Web App Container)
-			- Supported languages and frameworks include Node.js, Java (JRE 8 & JRE 11), PHP, Python, .NET, and Ruby.
-					- The languages versions are updated alongside your repositories whenever you need it
+		- Apps can be hosted natively on Linius, but they also require that it works on Linux too 
+			- This is done by running it in a custom Linux container (also known as a Web App Container)
+		- Supported languages and frameworks include Node.js, Java (JRE 8 & JRE 11), PHP, Python, .NET, and Ruby.
+			- The language versions are updated alongside your repositories whenever you need it
